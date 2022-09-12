@@ -8,9 +8,13 @@ btn.addEventListener('click', palindrome)
 function palindrome() {
     const currentStr = input.value.toUpperCase()
     const reverseStr = input.value.split('').reverse().join('').toUpperCase()
+    result.classList.add('animate')
     if (currentStr === reverseStr) {
         result.innerHTML = `${currentStr} is a Palindrome`
     } else {
         result.innerHTML = `${currentStr} is <span style='color: red'>NOT</span> a Palindrom`
     }
+    setTimeout(() => {
+        result.classList.remove('animate')
+    }, 4000)
 }

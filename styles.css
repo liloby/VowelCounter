@@ -41,7 +41,7 @@ img {
 }
 
 body {
-  background: var(--light-blue);
+  background: #346471;
 }
 
 .main {
@@ -54,16 +54,17 @@ body {
 
 .pal {
   width: 40rem;
-  background-color: var(--white);
-  padding: 5rem 3rem;
+  background: var(--white);
+  padding: 5rem 3rem 3rem 3rem;
   border-radius: 1rem;
+  box-shadow: 3px 3px 8px rgba(255, 255, 255, 0.407);
 }
 
 input {
   width: 70%;
   border: none;
   outline: none;
-  border-bottom: 2px solid var(--color-sec);
+  border-bottom: 2px solid #b0008f;
   padding: 1rem 5px;
   font-size: 1.6rem;
 }
@@ -75,13 +76,40 @@ button {
   outline: none;
   border-radius: 3px;
   color: var(--white);
-  background: var(--color-primary);
+  background: rgb(0, 167, 122);
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 50%;
 }
 
 p.result {
   margin-top: 3.5rem;
-  text-align: center;
   font-size: 2rem;
   font-weight: 600;
   color: rgb(46, 46, 46);
+}
+
+p.animate {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  animation: type 3s steps(70, end); 
+}
+
+@keyframes type{ 
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+} 
+
+h1 {
+  display: flex;
+  justify-content: start;
+  font-size: 2rem;
+  transform: translate(0, -120%);
 }
