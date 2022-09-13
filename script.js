@@ -2,18 +2,23 @@ const btn = document.querySelector('.btn')
 const result = document.querySelector('.result')
 const input = document.querySelector('.input-text')
 
-btn.addEventListener('click', palindrome)
+btn.addEventListener('click', vowel)
 
 
-function palindrome() {
-    const currentStr = input.value.toUpperCase()
-    const reverseStr = input.value.split('').reverse().join('').toUpperCase()
-    result.classList.add('animate')
-    if (currentStr === reverseStr) {
-        result.innerHTML = `${currentStr} is a Palindrome`
+function vowel() {
+    const vowel = ['a', 'e', 'i', 'o', 'u']
+    let count = 0
+    input.value.split('').forEach(letter => {
+        if (vowel.includes(letter)) {
+            count++
+        }
+    })
+    if (count === 0) {
+        result.innerHTML = `${input.value.toUpperCase()} has <span style='color: red'>no</span> vowels`
     } else {
-        result.innerHTML = `${currentStr} is <span style='color: red'>NOT</span> a Palindrom`
+        result.innerHTML = `${input.value.toUpperCase()} has ${count} vowels`
     }
+    result.classList.add('animate')
     setTimeout(() => {
         result.classList.remove('animate')
     }, 4000)
