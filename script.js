@@ -15,6 +15,8 @@ function vowel() {
     })
     if (count === 0) {
         result.innerHTML = `${input.value.toUpperCase()} has <span style='color: red'>no</span> vowels`
+    } else if (count === 1) {
+        result.innerHTML = `${input.value.toUpperCase()} has a vowel`
     } else {
         result.innerHTML = `${input.value.toUpperCase()} has ${count} vowels`
     }
